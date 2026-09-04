@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Locais Turísticos de Moçambique</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <img src="images/lgo_moz_turismo.png" alt="Logotipo Turismo Moçambique" />
+      <h1>Locais Turísticos de Moçambique</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#slideshow">Início</a></li>
+        <li><a href="#cards">Locais</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Slideshow -->
+  <section id="slideshow" class="slideshow">
+    <div class="slide active">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Bazaruto_Island_Aerial_View.png/640px-Bazaruto_Island_Aerial_View.png" alt="Ilha de Bazaruto" />
+      <div class="caption">Ilha de Bazaruto</div>
+    </div>
+    <div class="slide">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Gorongosa03.jpg/640px-Gorongosa03.jpg" alt="Parque Nacional da Gorongosa" />
+      <div class="caption">Parque Nacional da Gorongosa</div>
+    </div>
+    <div class="slide">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Tofo_Beach_-_Mozambique_%282%29.jpg/640px-Tofo_Beach_-_Mozambique_%282%29.jpg" alt="Praia do Tofo" />
+      <div class="caption">Praia do Tofo</div>
+    </div>
+    <button class="prev" aria-label="Slide anterior">&#10094;</button>
+    <button class="next" aria-label="Próximo slide">&#10095;</button>
+  </section>
+
+  <!-- Cartões -->
+  <section id="cards" class="cards">
+    <h2>Locais Turísticos</h2>
+    <div class="card-container">
+      <article class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Bazaruto_Island_Aerial_View.png/320px-Bazaruto_Island_Aerial_View.png" alt="Ilha de Bazaruto" />
+        <h3>Bazaruto</h3>
+        <p>Um arquipélago famoso pelas suas praias paradisíacas e vida marinha diversificada.</p>
+      </article>
+      <article class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Gorongosa03.jpg/320px-Gorongosa03.jpg" alt="Parque Nacional da Gorongosa" />
+        <h3>Gorongosa</h3>
+        <p>Parque nacional conhecido pela biodiversidade e conservação ambiental.</p>
+      </article>
+      <article class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Tofo_Beach_-_Mozambique_%282%29.jpg/320px-Tofo_Beach_-_Mozambique_%282%29.jpg" alt="Praia do Tofo" />
+        <h3>Tofo</h3>
+        <p>Praia famosa por mergulho com manta e tubarões-baleia.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Formulário -->
+  <section id="contact" class="contact">
+    <h2>Contacto</h2>
+    <form id="contactForm" novalidate>
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="subject">Assunto:</label>
+      <input type="text" id="subject" name="subject" required />
+
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Enviar</button>
+      <button type="reset">Limpar</button>
+    </form>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    Dinostrato Eugénio Bernardo © Copyright 2026.
+  </footer>
+
+  <!-- Chatbot -->
+  <div id="chatbot">
+    <button id="chatbot-toggle" aria-label="Abrir chatbot">Chat</button>
+    <div id="chatbot-window" style="display:none;">
+      <div id="chatbot-messages" aria-live="polite"></div>
+      <input type="text" id="chatbot-input" placeholder="Pergunte sobre o turismo..." aria-label="Mensagem do chatbot" />
+      <button id="chatbot-send" aria-label="Enviar mensagem">Enviar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+      </html>
 
