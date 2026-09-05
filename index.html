@@ -1,104 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt-MZ">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Locais Turísticos de Moçambique</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo Moçambique - Descubra o Paraíso Índico</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header>
-    <div class="logo">
-      <img src="images/lgo_moz_turismo.png" alt="Logotipo Turismo Moçambique" />
-      <h1>Locais Turísticos de Moçambique</h1>
+
+    <header class="header">
+        <div class="logo-container">
+            <i class="fa-solid fa-earth-africa logo-icon"></i>
+            <span class="logo-text">Visite <strong>Moçambique</strong></span>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#inicio"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a href="#destinos"><i class="fa-solid fa-map-location-dot"></i> Destinos</a></li>
+                <li><a href="#experiencias"><i class="fa-solid fa-compass"></i> Experiências</a></li>
+                <li><a href="#contacto"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="slider-container">
+        <div class="slides">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400" alt="Arquipélago de Bazaruto">
+                <div class="slide-caption">
+                    <h3>Arquipélago de Bazaruto</h3>
+                    <p>Dunas douradas, águas azul-turquesa e vida marinha protegida.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1400" alt="Parque Nacional da Gorongosa">
+                <div class="slide-caption">
+                    <h3>Parque Nacional da Gorongosa</h3>
+                    <p>O coração selvagem de Moçambique e exemplo global de conservação.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1400" alt="Ilha de Moçambique">
+                <div class="slide-caption">
+                    <h3>Ilha de Moçambique</h3>
+                    <p>Património Mundial da UNESCO repleto de história e cultura.</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="slider-btn prev" onclick="mudarSlide(-1)" aria-label="Slide anterior">&#10094;</button>
+        <button class="slider-btn next" onclick="mudarSlide(1)" aria-label="Próximo slide">&#10095;</button>
+    </section>
+
+    <section id="destinos" class="section">
+        <div class="container">
+            <h2 class="section-title">Destinos Imperdíveis</h2>
+            <p class="section-subtitle">Conheça as maravilhas naturais e culturais que encantam o mundo.</p>
+
+            <div class="cards-grid">
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600" alt="Praia do Tofo">
+                    <div class="card-content">
+                        <h3>Praia do Tofo (Inhambane)</h3>
+                        <p>Famosa pelo mergulho com tubarões-baleia, raias-manta e praias tropicais.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600" alt="Gorongosa Safari">
+                    <div class="card-content">
+                        <h3>Parque da Gorongosa (Sofala)</h3>
+                        <p>Safaris inesquecíveis com leões, elefantes e paisagens deslumbrantes.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=600" alt="Ilha de Moçambique">
+                    <div class="card-content">
+                        <h3>Ilha de Moçambique (Nampula)</h3>
+                        <p>Arquitetura colonial, fortaleza de São Sebastião e cultura suaíli.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section section-alt">
+        <div class="container form-container">
+            <h2 class="section-title">Fale Connosco</h2>
+            <p class="section-subtitle">Planeie a sua viagem ou envie as suas dúvidas.</p>
+
+            <form id="contactForm" onsubmit="return validarFormulario(event)" novalidate>
+                <div class="form-group">
+                    <label for="nome">Nome Completo *</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite o seu nome completo">
+                    <span class="error-msg" id="erro-nome"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" name="email" placeholder="exemplo@dominio.com">
+                    <span class="error-msg" id="erro-email"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="assunto">Assunto *</label>
+                    <input type="text" id="assunto" name="assunto" placeholder="Ex: Informações sobre Bazaruto">
+                    <span class="error-msg" id="erro-assunto"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem *</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva aqui a sua mensagem..."></textarea>
+                    <span class="error-msg" id="erro-mensagem"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+                    <button type="reset" class="btn btn-secondary" onclick="limparErros()"><i class="fa-solid fa-eraser"></i> Limpar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div class="chatbot-wrapper">
+        <button id="chatToggleBtn" class="chat-toggle" aria-label="Abrir assistente virtual">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+
+        <div id="chatWindow" class="chat-window">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <i class="fa-solid fa-robot"></i>
+                    <div>
+                        <h4>Guia IA Moçambique</h4>
+                        <small>Online | Tire as suas dúvidas</small>
+                    </div>
+                </div>
+                <button id="chatCloseBtn" class="chat-close">&times;</button>
+            </div>
+            
+            <div id="chatMessages" class="chat-messages">
+                <div class="message bot">
+                    Olá! Sou o seu assistente virtual de turismo. Pergunte-me sobre <strong>Gorongosa</strong>, <strong>Bazaruto</strong>, <strong>Tofo</strong>, <strong>Ilha de Moçambique</strong> ou <strong>melhor época para viajar</strong>!
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Faça uma pergunta sobre turismo..." onkeypress="handleChatEnter(event)">
+                <button id="chatSendBtn" onclick="enviarMensagemChat()"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#slideshow">Início</a></li>
-        <li><a href="#cards">Locais</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Slideshow -->
-  <section id="slideshow" class="slideshow">
-    <div class="slide active">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Bazaruto_Island_Aerial_View.png/640px-Bazaruto_Island_Aerial_View.png" alt="Ilha de Bazaruto" />
-      <div class="caption">Ilha de Bazaruto</div>
-    </div>
-    <div class="slide">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Gorongosa03.jpg/640px-Gorongosa03.jpg" alt="Parque Nacional da Gorongosa" />
-      <div class="caption">Parque Nacional da Gorongosa</div>
-    </div>
-    <div class="slide">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Tofo_Beach_-_Mozambique_%282%29.jpg/640px-Tofo_Beach_-_Mozambique_%282%29.jpg" alt="Praia do Tofo" />
-      <div class="caption">Praia do Tofo</div>
-    </div>
-    <button class="prev" aria-label="Slide anterior">&#10094;</button>
-    <button class="next" aria-label="Próximo slide">&#10095;</button>
-  </section>
+    <footer class="footer">
+        <p>[Seu Nome Completo] © Copyright 2023.</p>
+    </footer>
 
-  <!-- Cartões -->
-  <section id="cards" class="cards">
-    <h2>Locais Turísticos</h2>
-    <div class="card-container">
-      <article class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Bazaruto_Island_Aerial_View.png/320px-Bazaruto_Island_Aerial_View.png" alt="Ilha de Bazaruto" />
-        <h3>Bazaruto</h3>
-        <p>Um arquipélago famoso pelas suas praias paradisíacas e vida marinha diversificada.</p>
-      </article>
-      <article class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Gorongosa03.jpg/320px-Gorongosa03.jpg" alt="Parque Nacional da Gorongosa" />
-        <h3>Gorongosa</h3>
-        <p>Parque nacional conhecido pela biodiversidade e conservação ambiental.</p>
-      </article>
-      <article class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Tofo_Beach_-_Mozambique_%282%29.jpg/320px-Tofo_Beach_-_Mozambique_%282%29.jpg" alt="Praia do Tofo" />
-        <h3>Tofo</h3>
-        <p>Praia famosa por mergulho com manta e tubarões-baleia.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Formulário -->
-  <section id="contact" class="contact">
-    <h2>Contacto</h2>
-    <form id="contactForm" novalidate>
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name" required />
-
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="subject">Assunto:</label>
-      <input type="text" id="subject" name="subject" required />
-
-      <label for="message">Mensagem:</label>
-      <textarea id="message" name="message" required></textarea>
-
-      <button type="submit">Enviar</button>
-      <button type="reset">Limpar</button>
-    </form>
-  </section>
-
-  <!-- Rodapé -->
-  <footer>
-    Dinostrato Eugénio Bernardo © Copyright 2026.
-  </footer>
-
-  <!-- Chatbot -->
-  <div id="chatbot">
-    <button id="chatbot-toggle" aria-label="Abrir chatbot">Chat</button>
-    <div id="chatbot-window" style="display:none;">
-      <div id="chatbot-messages" aria-live="polite"></div>
-      <input type="text" id="chatbot-input" placeholder="Pergunte sobre o turismo..." aria-label="Mensagem do chatbot" />
-      <button id="chatbot-send" aria-label="Enviar mensagem">Enviar</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-      </html>
-
+</html>
