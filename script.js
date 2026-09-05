@@ -160,3 +160,30 @@ function processarRespostaIA(pergunta) {
         return "Interessante pergunta! Moçambique oferece praias paradisíacas (Bazaruto, Tofo), safaris na Gorongosa e riqueza histórica na Ilha de Moçambique. Deseja detalhes sobre algum destes?";
     }
 }
+function enviarParaWhatsApp(event) {
+  event.preventDefault();
+
+  // Substitua pelo seu número com o código do país (258 para Moçambique)
+  const numeroTelefone = "258844883985";
+
+  const nome = document.getElementById("nome").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const assunto = document.getElementById("assunto").value.trim();
+  const mensagem = document.getElementById("mensagem").value.trim();
+
+  if (!nome || !mensagem) {
+    alert("Por favor, preencha pelo menos o Nome e a Mensagem.");
+    return false;
+  }
+
+  const texto = `*Mensagem do Site - Turismo Moçambique*\n\n` +
+                `*Nome:* ${nome}\n` +
+                `*E-mail:* ${email}\n` +
+                `*Assunto:* ${assunto}\n` +
+                `*Mensagem:* ${mensagem}`;
+
+  const url = `https://wa.me/${numeroTelefone}?text=${encodeURIComponent(texto)}`;
+  window.open(url, "_blank");
+
+  return false;
+}
