@@ -164,7 +164,7 @@ function enviarParaWhatsApp(event) {
   event.preventDefault();
 
   // Substitua pelo seu número com o código do país (258 para Moçambique)
-  const numeroTelefone = "258844883985";
+  const numeroTelefone = "258867455423";
 
   const nome = document.getElementById("nome").value.trim();
   const email = document.getElementById("email").value.trim();
